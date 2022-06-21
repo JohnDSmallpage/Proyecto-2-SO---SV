@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Interfaz;
+import Clases.*;
 
 /**
  *
@@ -11,11 +12,45 @@ package Interfaz;
  */
 public class MainInterfaz extends javax.swing.JFrame {
 
+    public static Administrador admin;
+    public static IA ia;
+    public static Cola cola_1;
+    public static Cola cola_2;
+    public static Cola cola_3;
+    public static Cola cola_refuerzo;
+    public static boolean encendido;
+    public static int contador;
+    public static String [] tipo_material;
+    
+    
     /**
      * Creates new form MainInterfaz
      */
     public MainInterfaz() {
         initComponents();
+        this.admin= admin;
+        this.ia= ia;
+        this.cola_1= cola_1;
+        this.cola_2= cola_2;
+        this.cola_3= cola_3;
+        this.cola_refuerzo= cola_refuerzo;
+        this.encendido=false;
+        this.contador=0;
+        this.tipo_material= new String[4];
+        tipo_material[0]="Madera";
+        tipo_material[1]="Aluminio";
+        tipo_material[2]="Oro";
+        tipo_material[3]="Diamante";
+        admin= new Administrador();
+        ia= new IA();
+        cola_1= new Cola();
+        cola_2= new Cola();
+        cola_3= new Cola();
+        cola_refuerzo= new Cola();
+       
+        
+        
+        
     }
 
     /**

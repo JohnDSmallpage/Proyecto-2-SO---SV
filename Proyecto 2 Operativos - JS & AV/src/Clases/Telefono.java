@@ -4,11 +4,125 @@
  * and open the template in the editor.
  */
 package Clases;
+import Interfaz.*;
 
 /**
  *
  * @author johnd
  */
 public class Telefono {
+    public int ID;
+    public int copas;
+    public int nro_pantallas;
+    public int nro_pin;
+    public int camara;
+    public int botones;
+    public String tipo_material;
+
+    public Telefono(int identificador) {
+        if (identificador==0) {
+            this.ID = 0;
+            this.copas = 0;
+            this.nro_pantallas = 2;
+            this.nro_pin = 1;
+            this.camara = 4;
+            this.botones = 3;
+            this.tipo_material= MainInterfaz.tipo_material[(int) Math.floor(Math.random()*(4-0+1)+0)];
+        }
+        else{
+            this.ID = 0;
+            this.copas = 0;
+            this.nro_pantallas = 1;
+            this.nro_pin = 1;
+            this.camara = 4;
+            this.botones = 3;
+        }
+    }
+    
+    public void SistemaCopas(){
+        for (int i = 0; i < getNro_pantallas(); i++) {
+            if (Math.random()<0.75) {
+                copas+=300;
+            }
+        }
+        for (int i = 0; i < getCamara(); i++) {
+            if (Math.random()<0.80) {
+                copas+=200;
+            }
+        }
+        for (int i = 0; i < getBotones(); i++) {
+            if (Math.random()<0.85) {
+                copas+=150;
+            }
+        }
+        if (Math.random()<0.84) {
+            copas+=100;
+            //Para el pin
+        }
+        if (tipo_material.equals("Madera")) {
+            copas+=200;
+        }
+        else if(tipo_material.equals("Aluminio")){
+            copas+=400;
+        }
+        else if(tipo_material.equals("Oro")){
+            copas+=600;
+        }
+        else if(tipo_material.equals("Diamante")){
+            copas+=1000;
+        }
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getCopas() {
+        return copas;
+    }
+
+    public void setCopas(int copas) {
+        this.copas = copas;
+    }
+
+    public int getNro_pantallas() {
+        return nro_pantallas;
+    }
+
+    public void setNro_pantallas(int nro_pantallas) {
+        this.nro_pantallas = nro_pantallas;
+    }
+
+    public int getNro_pin() {
+        return nro_pin;
+    }
+
+    public void setNro_pin(int nro_pin) {
+        this.nro_pin = nro_pin;
+    }
+
+    public int getCamara() {
+        return camara;
+    }
+
+    public void setCamara(int camara) {
+        this.camara = camara;
+    }
+
+    public int getBotones() {
+        return botones;
+    }
+
+    public void setBotones(int botones) {
+        this.botones = botones;
+    }
+    
+    
+    
+    
     
 }

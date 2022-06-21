@@ -5,10 +5,27 @@
  */
 package Clases;
 
+import Interfaz.MainInterfaz;
+
 /**
  *
  * @author johnd
  */
 public class Administrador {
+    
+    public void AdministrarIA(){
+        if (MainInterfaz.contador==4 && Math.random()<0.7) {
+            //
+        }
+    }
+    
+    public void AdministrarColas(){
+        
+    }
+    
+    
+    public void CrearTelefono(){
+        
+    }
     
 }
