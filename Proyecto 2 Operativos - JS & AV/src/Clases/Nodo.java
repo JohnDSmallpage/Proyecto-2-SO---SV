@@ -11,4 +11,31 @@ package Clases;
  */
 public class Nodo {
     
+    private Telefono telefono;
+    private Nodo siguiente;
+
+    public Nodo() {
+        this.telefono = telefono;
+        this.siguiente = null;
+    }
+
+    public Nodo getSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(Nodo siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    public Telefono getInfo() {
+        return telefono;
+    }
+
+    public void setInfo(int info) {
+        this.telefono = telefono;
+    }
+    
+    
+    
+    
 }
