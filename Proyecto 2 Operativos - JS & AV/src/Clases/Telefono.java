@@ -21,13 +21,14 @@ public class Telefono {
 
     public Telefono(int identificador) {
         if (identificador==0) {
-            this.ID = 0;
+            this.ID = MainInterfaz.ID_global+1;
             this.copas = 0;
             this.nro_pantallas = 2;
             this.nro_pin = 1;
             this.camara = 4;
             this.botones = 3;
             this.tipo_material= MainInterfaz.tipo_material[(int) Math.floor(Math.random()*(4-0+1)+0)];
+            SistemaCopas();
         }
         else{
             this.ID = 0;
@@ -36,27 +37,28 @@ public class Telefono {
             this.nro_pin = 1;
             this.camara = 4;
             this.botones = 3;
+            this.tipo_material= MainInterfaz.tipo_material[(int) Math.floor(Math.random()*(4-0+1)+0)];
         }
     }
     
     public void SistemaCopas(){
         for (int i = 0; i < getNro_pantallas(); i++) {
             if (Math.random()<0.75) {
-                copas+=300;
+                copas+=350;
             }
         }
         for (int i = 0; i < getCamara(); i++) {
             if (Math.random()<0.80) {
-                copas+=200;
+                copas+=250;
             }
         }
         for (int i = 0; i < getBotones(); i++) {
             if (Math.random()<0.85) {
-                copas+=150;
+                copas+=200;
             }
         }
         if (Math.random()<0.84) {
-            copas+=100;
+            copas+=150;
             //Para el pin
         }
         if (tipo_material.equals("Madera")) {

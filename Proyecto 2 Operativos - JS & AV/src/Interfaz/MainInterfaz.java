@@ -25,6 +25,11 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static boolean encendido;
     public static int contador;
     public static String [] tipo_material;
+    public static int [] cartas;
+    public static int ID_global;
+    public static int vendidos_john;
+    public static int vendidos_ale;
+    
     
     
     /**
@@ -36,30 +41,36 @@ public class MainInterfaz extends javax.swing.JFrame {
         this.setVisible(true);
         this.setSize(800,700);
         this.setLocationRelativeTo(null);
-        this.admin= admin;
-        this.ia= ia;
-        this.cola_1_john= cola_1_john;
-        this.cola_2_john= cola_2_john;
-        this.cola_3_john= cola_3_john;
-        this.cola_refuerzo_john= cola_refuerzo_john;
-        this.cola_1_ale= cola_1_ale;
-        this.cola_2_ale= cola_2_ale;
-        this.cola_3_ale= cola_3_ale;
-        this.cola_refuerzo_ale= cola_refuerzo_ale;
+        this.admin= new Administrador();
+        this.ia= new IA();
+        this.cola_1_john= new Cola();
+        this.cola_2_john= new Cola();
+        this.cola_3_john= new Cola();
+        this.cola_refuerzo_john= new Cola();
+        this.cola_1_ale= new Cola();
+        this.cola_2_ale= new Cola();
+        this.cola_3_ale= new Cola();
+        this.cola_refuerzo_ale= new Cola();
         this.encendido=false;
         this.contador=0;
         this.tipo_material= new String[4];
+        this.cartas= new int[8];
+        this.ID_global=0;
+        this.vendidos_john=0;
+        this.vendidos_ale=0;
+        
         tipo_material[0]="Madera";
         tipo_material[1]="Aluminio";
         tipo_material[2]="Oro";
         tipo_material[3]="Diamante";
-        admin= new Administrador();
-        ia= new IA();
-        cola_1= new Cola();
-        cola_2= new Cola();
-        cola_3= new Cola();
-        cola_refuerzo= new Cola();
-       
+        cartas[0]=1;
+        cartas[1]=2;
+        cartas[2]=3;
+        cartas[3]=4;
+        cartas[4]=5;
+        cartas[5]=6;
+        cartas[6]=7;
+        cartas[7]=8;
         
         
         
@@ -100,7 +111,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        tiempo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -196,7 +207,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,7 +224,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField6.setBackground(new java.awt.Color(204, 204, 204));
         jTextField6.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,7 +234,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField7.setBackground(new java.awt.Color(204, 204, 204));
         jTextField7.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +244,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField8.setBackground(new java.awt.Color(204, 204, 204));
         jTextField8.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,7 +254,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField9.setBackground(new java.awt.Color(204, 204, 204));
         jTextField9.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(0, 0, 0));
         jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,7 +264,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField5.setBackground(new java.awt.Color(204, 204, 204));
         jTextField5.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -269,7 +274,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,7 +284,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -333,16 +336,16 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel25.setText("TIEMPO");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 590, 60, 30));
 
-        jTextField12.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField12.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        tiempo.setEditable(false);
+        tiempo.setBackground(new java.awt.Color(204, 204, 204));
+        tiempo.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        tiempo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tiempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                tiempoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 140, 30));
+        jPanel1.add(tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 140, 30));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -364,7 +367,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField10.setBackground(new java.awt.Color(204, 204, 204));
         jTextField10.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
         jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -375,7 +377,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField11.setBackground(new java.awt.Color(255, 51, 51));
         jTextField11.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(0, 0, 0));
         jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -392,7 +393,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField13.setBackground(new java.awt.Color(204, 204, 204));
         jTextField13.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(0, 0, 0));
         jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -435,7 +435,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField15.setBackground(new java.awt.Color(204, 204, 204));
         jTextField15.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField15.setForeground(new java.awt.Color(0, 0, 0));
         jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -446,7 +445,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField14.setBackground(new java.awt.Color(204, 204, 204));
         jTextField14.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField14.setForeground(new java.awt.Color(0, 0, 0));
         jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,7 +455,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jTextField16.setBackground(new java.awt.Color(51, 51, 255));
         jTextField16.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField16.setForeground(new java.awt.Color(0, 0, 0));
         jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -518,9 +515,9 @@ public class MainInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField11ActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void tiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_tiempoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -528,10 +525,20 @@ public class MainInterfaz extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        //Borrar colas antes
+        encendido=true;
+        Telefono telf_john= new Telefono(0);
+        Telefono telf_ale= new Telefono(1);
+        
+        
+        while (encendido==false) {            
+            
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        encendido=false;
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
@@ -616,7 +623,6 @@ public class MainInterfaz extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JTextField jTextField10;
     public static javax.swing.JTextField jTextField11;
-    public static javax.swing.JTextField jTextField12;
     public static javax.swing.JTextField jTextField13;
     public static javax.swing.JTextField jTextField14;
     public static javax.swing.JTextField jTextField15;
@@ -629,5 +635,6 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextField7;
     public static javax.swing.JTextField jTextField8;
     public static javax.swing.JTextField jTextField9;
+    public static javax.swing.JTextField tiempo;
     // End of variables declaration//GEN-END:variables
 }
