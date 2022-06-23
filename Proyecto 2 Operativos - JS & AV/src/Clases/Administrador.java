@@ -6,6 +6,7 @@
 package Clases;
 
 import Interfaz.MainInterfaz;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -13,13 +14,19 @@ import Interfaz.MainInterfaz;
  */
 public class Administrador {
     
-    public void AdministrarIA(){
+    public static void AdministrarIA(){
         if (MainInterfaz.contador==4 && Math.random()<0.7) {
             Telefono telf_john= new Telefono(0);
             Telefono telf_ale= new Telefono(1);
             MainInterfaz.contador=0;
             AdministrarColas(telf_john, telf_ale);
         }
+    }
+    
+    public static void Agregartelf(){
+        Telefono telf_john= new Telefono(0);
+        Telefono telf_ale= new Telefono(1);
+        AdministrarColas(telf_john, telf_ale);
     }
     
     public static void AdministrarColas(Telefono telf_john, Telefono telf_ale){
@@ -80,6 +87,67 @@ public class Administrador {
         else{
             MainInterfaz.cola_1_ale.Encolar(telf_ale);
         }
+    }
+    
+    public static void Admindesencola(Telefono telf_john, Telefono telf_ale){
+        if (telf_john.getCopas()<=1999) {
+            MainInterfaz.cola_3_john.Desencolar();
+        }
+        else if (telf_john.getCopas()>=2000 && telf_john.getCopas()<=2999) {
+            MainInterfaz.cola_2_john.Desencolar();
+        }
+        else{
+            MainInterfaz.cola_1_john.Desencolar();
+        }
+        
+        if (telf_ale.getCopas()<=1999) {
+            MainInterfaz.cola_3_ale.Desencolar();
+        }
+        else if (telf_ale.getCopas()>=2000 && telf_ale.getCopas()<=2999) {
+            MainInterfaz.cola_2_ale.Desencolar();
+        }
+        else{
+            MainInterfaz.cola_1_ale.Desencolar();
+        }
+        if (Math.random()<=0.4) {
+            Administrador.SalirDeRefuerzo();
+        }
+    }
+    
+    public static void Adminescoger() throws InterruptedException{
+        if (MainInterfaz.cola_1_john.esta_vacia() && MainInterfaz.cola_1_ale.esta_vacia()){
+            if(MainInterfaz.cola_2_john.esta_vacia() && MainInterfaz.cola_2_ale.esta_vacia()){
+                if(MainInterfaz.cola_3_john.esta_vacia() && MainInterfaz.cola_3_ale.esta_vacia()){
+                    
+                }
+                else{
+                    Telefono telf_john = MainInterfaz.cola_3_john.Leer_cabeza();
+                    Telefono telf_ale = MainInterfaz.cola_3_ale.Leer_cabeza();
+                    IA.decision(telf_john, telf_ale);
+                    TimeUnit.SECONDS.sleep((long) Integer.parseInt(MainInterfaz.tiempo.getText()));
+                    Administrador.AdministrarIA();
+                }
+            }
+            
+            else{
+                Telefono telf_john = MainInterfaz.cola_2_john.Leer_cabeza();
+                Telefono telf_ale = MainInterfaz.cola_2_ale.Leer_cabeza();
+                IA.decision(telf_john, telf_ale);
+                TimeUnit.SECONDS.sleep((long) Integer.parseInt(MainInterfaz.tiempo.getText()));
+                Administrador.AdministrarIA();
+            }
+        }
+        
+        else{
+            Telefono telf_john = MainInterfaz.cola_1_john.Leer_cabeza();
+            Telefono telf_ale = MainInterfaz.cola_1_ale.Leer_cabeza();
+            IA.decision(telf_john, telf_ale);
+            TimeUnit.SECONDS.sleep((long) Integer.parseInt(MainInterfaz.tiempo.getText()));
+            Administrador.AdministrarIA();
+        }
+        
+        
+        
     }
     
     
