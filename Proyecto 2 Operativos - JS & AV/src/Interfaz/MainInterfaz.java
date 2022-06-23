@@ -781,7 +781,7 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static javax.swing.JLabel carta81;
     public static javax.swing.JLabel carta82;
     public static javax.swing.JTextField cola1ale;
-    private javax.swing.JTextPane cola1john;
+    public static javax.swing.JTextPane cola1john;
     public static javax.swing.JTextField cola2ale;
     public static javax.swing.JTextField cola2john;
     public static javax.swing.JTextField cola3ale;
