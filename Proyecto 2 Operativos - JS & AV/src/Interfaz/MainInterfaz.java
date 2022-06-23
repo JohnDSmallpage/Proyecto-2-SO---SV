@@ -88,6 +88,8 @@ public class MainInterfaz extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        menos = new javax.swing.JButton();
+        mas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -117,6 +119,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        ganador = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -124,8 +127,24 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
+        fondo1 = new javax.swing.JLabel();
+        fondo2 = new javax.swing.JLabel();
+        carta81 = new javax.swing.JLabel();
+        carta82 = new javax.swing.JLabel();
+        carta71 = new javax.swing.JLabel();
+        carta72 = new javax.swing.JLabel();
+        carta61 = new javax.swing.JLabel();
+        carta62 = new javax.swing.JLabel();
+        carta51 = new javax.swing.JLabel();
+        carta52 = new javax.swing.JLabel();
+        carta41 = new javax.swing.JLabel();
+        carta42 = new javax.swing.JLabel();
+        carta31 = new javax.swing.JLabel();
+        carta32 = new javax.swing.JLabel();
+        carta21 = new javax.swing.JLabel();
+        carta22 = new javax.swing.JLabel();
+        carta11 = new javax.swing.JLabel();
+        carta12 = new javax.swing.JLabel();
         jTextField15 = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
         jTextField16 = new javax.swing.JTextField();
@@ -135,6 +154,17 @@ public class MainInterfaz extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        menos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/menos.png"))); // NOI18N
+        menos.setBorderPainted(false);
+        menos.setContentAreaFilled(false);
+        jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 600, 40, 30));
+
+        mas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/mas.png"))); // NOI18N
+        mas.setBorderPainted(false);
+        mas.setContentAreaFilled(false);
+        mas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(mas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, 40, 30));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,6 +237,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 580, 50, 50));
 
+        jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -224,6 +255,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 54, -1));
 
+        jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(204, 204, 204));
         jTextField6.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -234,6 +266,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 140, 30));
 
+        jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(204, 204, 204));
         jTextField7.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -244,6 +277,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 40, 160));
 
+        jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(204, 204, 204));
         jTextField8.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -254,6 +288,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 40, 160));
 
+        jTextField9.setEditable(false);
         jTextField9.setBackground(new java.awt.Color(204, 204, 204));
         jTextField9.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -264,6 +299,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 40, 160));
 
+        jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(204, 204, 204));
         jTextField5.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -274,6 +310,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 40, 160));
 
+        jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -284,6 +321,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 160));
 
+        jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -336,7 +374,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("TIEMPO");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 590, 60, 30));
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 570, 60, 30));
 
         tiempo.setEditable(false);
         tiempo.setBackground(new java.awt.Color(204, 204, 204));
@@ -347,7 +385,7 @@ public class MainInterfaz extends javax.swing.JFrame {
                 tiempoActionPerformed(evt);
             }
         });
-        jPanel1.add(tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 140, 30));
+        jPanel1.add(tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, 80, 30));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -367,6 +405,18 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel14.setText("INTELIGENCIA ARTIFICIAL");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 190, 30));
 
+        ganador.setEditable(false);
+        ganador.setBackground(new java.awt.Color(204, 204, 204));
+        ganador.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        ganador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ganador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ganadorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 150, 40));
+
+        jTextField10.setEditable(false);
         jTextField10.setBackground(new java.awt.Color(204, 204, 204));
         jTextField10.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -393,6 +443,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel15.setText("COLA 3");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 80, 30));
 
+        jTextField13.setEditable(false);
         jTextField13.setBackground(new java.awt.Color(204, 204, 204));
         jTextField13.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -421,20 +472,124 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel22.setText("COLA 2");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 80, 30));
 
-        jLabel23.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Diseño sin título (15).png"))); // NOI18N
-        jLabel23.setText("COLA 2");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+        fondo1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        fondo1.setForeground(new java.awt.Color(255, 255, 255));
+        fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Diseño sin título (16).png"))); // NOI18N
+        fondo1.setText("COLA 2");
+        jPanel1.add(fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
 
-        jLabel27.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Diseño sin título (15).png"))); // NOI18N
-        jLabel27.setText("COLA 2");
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+        fondo2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        fondo2.setForeground(new java.awt.Color(255, 255, 255));
+        fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Diseño sin título (16).png"))); // NOI18N
+        fondo2.setText("COLA 2");
+        fondo2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
 
+        carta81.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta81.setForeground(new java.awt.Color(255, 255, 255));
+        carta81.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/1.png"))); // NOI18N
+        carta81.setText("COLA 2");
+        jPanel1.add(carta81, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+
+        carta82.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta82.setForeground(new java.awt.Color(255, 255, 255));
+        carta82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/1.png"))); // NOI18N
+        carta82.setText("COLA 2");
+        carta82.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(carta82, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+
+        carta71.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta71.setForeground(new java.awt.Color(255, 255, 255));
+        carta71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/2.png"))); // NOI18N
+        carta71.setText("COLA 2");
+        jPanel1.add(carta71, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+
+        carta72.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta72.setForeground(new java.awt.Color(255, 255, 255));
+        carta72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/2.png"))); // NOI18N
+        carta72.setText("COLA 2");
+        carta72.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(carta72, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+
+        carta61.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta61.setForeground(new java.awt.Color(255, 255, 255));
+        carta61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/3.png"))); // NOI18N
+        carta61.setText("COLA 2");
+        jPanel1.add(carta61, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+
+        carta62.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta62.setForeground(new java.awt.Color(255, 255, 255));
+        carta62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/3.png"))); // NOI18N
+        carta62.setText("COLA 2");
+        carta62.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(carta62, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+
+        carta51.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta51.setForeground(new java.awt.Color(255, 255, 255));
+        carta51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/4.png"))); // NOI18N
+        carta51.setText("COLA 2");
+        jPanel1.add(carta51, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+
+        carta52.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta52.setForeground(new java.awt.Color(255, 255, 255));
+        carta52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/4.png"))); // NOI18N
+        carta52.setText("COLA 2");
+        carta52.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(carta52, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+
+        carta41.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta41.setForeground(new java.awt.Color(255, 255, 255));
+        carta41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/5.png"))); // NOI18N
+        carta41.setText("COLA 2");
+        jPanel1.add(carta41, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+
+        carta42.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta42.setForeground(new java.awt.Color(255, 255, 255));
+        carta42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/5.png"))); // NOI18N
+        carta42.setText("COLA 2");
+        carta42.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(carta42, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+
+        carta31.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta31.setForeground(new java.awt.Color(255, 255, 255));
+        carta31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/6.png"))); // NOI18N
+        carta31.setText("COLA 2");
+        jPanel1.add(carta31, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+
+        carta32.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta32.setForeground(new java.awt.Color(255, 255, 255));
+        carta32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/6.png"))); // NOI18N
+        carta32.setText("COLA 2");
+        carta32.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(carta32, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+
+        carta21.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta21.setForeground(new java.awt.Color(255, 255, 255));
+        carta21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/7.png"))); // NOI18N
+        carta21.setText("COLA 2");
+        jPanel1.add(carta21, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+
+        carta22.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta22.setForeground(new java.awt.Color(255, 255, 255));
+        carta22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/7.png"))); // NOI18N
+        carta22.setText("COLA 2");
+        carta22.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(carta22, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+
+        carta11.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta11.setForeground(new java.awt.Color(255, 255, 255));
+        carta11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/8.png"))); // NOI18N
+        carta11.setText("COLA 2");
+        jPanel1.add(carta11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 120));
+
+        carta12.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        carta12.setForeground(new java.awt.Color(255, 255, 255));
+        carta12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/Cartas/8.png"))); // NOI18N
+        carta12.setText("COLA 2");
+        carta12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(carta12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
+
+        jTextField15.setEditable(false);
         jTextField15.setBackground(new java.awt.Color(204, 204, 204));
         jTextField15.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -445,6 +600,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 140, 60));
 
+        jTextField14.setEditable(false);
         jTextField14.setBackground(new java.awt.Color(204, 204, 204));
         jTextField14.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -564,6 +720,10 @@ public class MainInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField16ActionPerformed
 
+    private void ganadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ganadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ganadorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -600,6 +760,25 @@ public class MainInterfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel carta11;
+    public static javax.swing.JLabel carta12;
+    public static javax.swing.JLabel carta21;
+    public static javax.swing.JLabel carta22;
+    public static javax.swing.JLabel carta31;
+    public static javax.swing.JLabel carta32;
+    public static javax.swing.JLabel carta41;
+    public static javax.swing.JLabel carta42;
+    public static javax.swing.JLabel carta51;
+    public static javax.swing.JLabel carta52;
+    public static javax.swing.JLabel carta61;
+    public static javax.swing.JLabel carta62;
+    public static javax.swing.JLabel carta71;
+    public static javax.swing.JLabel carta72;
+    public static javax.swing.JLabel carta81;
+    public static javax.swing.JLabel carta82;
+    public static javax.swing.JLabel fondo1;
+    public static javax.swing.JLabel fondo2;
+    public static javax.swing.JTextField ganador;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -616,10 +795,8 @@ public class MainInterfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -642,6 +819,8 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextField7;
     public static javax.swing.JTextField jTextField8;
     public static javax.swing.JTextField jTextField9;
+    private javax.swing.JButton mas;
+    private javax.swing.JButton menos;
     public static javax.swing.JTextField tiempo;
     // End of variables declaration//GEN-END:variables
 }
