@@ -5,6 +5,8 @@
  */
 package Interfaz;
 import Clases.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -529,6 +531,11 @@ public class MainInterfaz extends javax.swing.JFrame {
         encendido=true;
         Telefono telf_john= new Telefono(0);
         Telefono telf_ale= new Telefono(1);
+        try {
+            ia.decision(telf_john, telf_ale);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainInterfaz.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         
         while (encendido==false) {            

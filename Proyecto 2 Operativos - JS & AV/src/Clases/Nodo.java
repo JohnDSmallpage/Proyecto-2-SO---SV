@@ -31,7 +31,7 @@ public class Nodo {
         return telefono;
     }
 
-    public void setInfo(int info) {
+    public void setInfo(Telefono info) {
         this.telefono = telefono;
     }
     

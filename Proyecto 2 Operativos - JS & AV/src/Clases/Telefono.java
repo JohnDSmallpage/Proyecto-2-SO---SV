@@ -18,6 +18,7 @@ public class Telefono {
     public int camara;
     public int botones;
     public String tipo_material;
+    public int contador_tel;
 
     public Telefono(int identificador) {
         if (identificador==0) {
@@ -28,6 +29,7 @@ public class Telefono {
             this.camara = 4;
             this.botones = 3;
             this.tipo_material= MainInterfaz.tipo_material[(int) Math.floor(Math.random()*(4-0+1)+0)];
+            this.contador_tel=0;
             SistemaCopas();
         }
         else{

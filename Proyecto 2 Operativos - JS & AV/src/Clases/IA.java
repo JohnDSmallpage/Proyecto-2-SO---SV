@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class IA {
 
     public void decision(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
+        MainInterfaz.contador+=2;
         double valor = Math.random();
         if (valor <= 0.4) {
             batalla(telf_john, telf_ale);
@@ -23,9 +24,37 @@ public class IA {
         } else if (valor <= 1 && valor > 0.73) {
             empate(telf_john, telf_ale);
         }
+        
+        
+        
     }
 
     public void batalla(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
+        
+        if (telf_john.getCopas()<=1999) {
+            MainInterfaz.cola_3_john.Desencolar();
+        }
+        else if (telf_john.getCopas()>=2000 && telf_john.getCopas()<=2999) {
+            MainInterfaz.cola_2_john.Desencolar();
+        }
+        else{
+            MainInterfaz.cola_1_john.Desencolar();
+        }
+        
+        if (telf_ale.getCopas()<=1999) {
+            MainInterfaz.cola_3_ale.Desencolar();
+        }
+        else if (telf_ale.getCopas()>=2000 && telf_ale.getCopas()<=2999) {
+            MainInterfaz.cola_2_ale.Desencolar();
+        }
+        else{
+            MainInterfaz.cola_1_ale.Desencolar();
+        }
+        
+        if (Math.random()<=0.4) {
+            Administrador.SalirDeRefuerzo();
+        }
+        
         int[] mazo_john = new int[4];
         int[] mazo_ale = new int[4];
         for (int i = 0; i < 4; i++) {
@@ -70,11 +99,11 @@ public class IA {
     }
 
     public void empate(Telefono telf_john, Telefono telf_ale) {
-
+        Administrador.AdministrarColas(telf_john, telf_ale);
     }
 
     public void refuerzo(Telefono telf_john, Telefono telf_ale) {
-
+        Administrador.AdministrarRefuerzo(telf_john, telf_ale);
     }
 
 }
