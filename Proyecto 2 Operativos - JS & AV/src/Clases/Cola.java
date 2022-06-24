@@ -80,13 +80,14 @@ public class Cola {
         Nodo aux = pfirst;
         if (!esta_vacia()) {
             for (int i = 0; i <size; i++) {
-                if(aux != null){
-                palabra+=String.valueOf(aux.getInfo().ID)+"\n";
-                aux = aux.getSiguiente();
+                    if(aux != null){
+                        palabra+=String.valueOf(aux.getInfo().ID)+"\n";
+                        aux = aux.getSiguiente();
                 }
             } 
         }
     return palabra;
     }
+    
 
 }

@@ -688,6 +688,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         Telefono telf_ale= new Telefono(1);
         Administrador.Agregartelf();
         
+        
         try {
             IA.decision(telf_john, telf_ale);
             } catch (InterruptedException ex) {
