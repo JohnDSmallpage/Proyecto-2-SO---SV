@@ -33,6 +33,8 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static int vendidos_john;
     public static int vendidos_ale;
     public static int tiempo_global;
+    public static boolean primera;
+ 
     
     
     
@@ -63,6 +65,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         this.vendidos_john=0;
         this.vendidos_ale=0;
         this.tiempo_global=11;
+        this.primera=false;
         
         tipo_material[0]="Madera";
         tipo_material[1]="Aluminio";
@@ -77,6 +80,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         cartas[5]=6;
         cartas[6]=7;
         cartas[7]=8;
+        
         
         
         
@@ -133,7 +137,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         ganador = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        score1 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
@@ -160,7 +164,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         carta12 = new javax.swing.JLabel();
         jTextField15 = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
+        score2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -401,15 +405,15 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 150, 30));
 
-        jTextField11.setBackground(new java.awt.Color(255, 51, 51));
-        jTextField11.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        score1.setBackground(new java.awt.Color(255, 51, 51));
+        score1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        score1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        score1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                score1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 60, 30));
+        jPanel1.add(score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 60, 30));
 
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -591,15 +595,15 @@ public class MainInterfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 140, 60));
 
-        jTextField16.setBackground(new java.awt.Color(51, 51, 255));
-        jTextField16.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        score2.setBackground(new java.awt.Color(51, 51, 255));
+        score2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        score2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        score2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                score2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 530, 60, 30));
+        jPanel1.add(score2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 530, 60, 30));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -617,9 +621,9 @@ public class MainInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inteligenciaActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void score1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_score1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_score1ActionPerformed
 
     private void tiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoActionPerformed
         // TODO add your handling code here:
@@ -633,29 +637,13 @@ public class MainInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Borrar colas antes
         encendido=true;
-        Telefono telf_john= new Telefono(0);
-        Telefono telf_ale= new Telefono(1);
-        Administrador.Agregartelf();
-        
-        try {
-            IA.decision(telf_john, telf_ale);
-            } catch (InterruptedException ex) {
-            Logger.getLogger(MainInterfaz.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        
-        while (encendido!=false) {
-            try {
-                Administrador.Adminescoger();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(MainInterfaz.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            ID_global+=1;
-        }
+        ia.start();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         encendido=false;
+        ia.stop();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
@@ -670,9 +658,9 @@ public class MainInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField15ActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void score2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_score2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_score2ActionPerformed
 
     private void ganadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ganadorActionPerformed
         // TODO add your handling code here:
@@ -794,13 +782,13 @@ public class MainInterfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    public static javax.swing.JTextField jTextField11;
     public static javax.swing.JTextField jTextField13;
     public static javax.swing.JTextField jTextField14;
     public static javax.swing.JTextField jTextField15;
-    public static javax.swing.JTextField jTextField16;
     private javax.swing.JButton mas;
     private javax.swing.JButton menos;
+    public static javax.swing.JTextField score1;
+    public static javax.swing.JTextField score2;
     public static javax.swing.JTextField tiempo;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,15 +7,29 @@ package Clases;
 
 import Interfaz.MainInterfaz;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author johnd
  */
 public class IA extends Thread {
-    
 
-    public static void decision(Telefono telf_john, Telefono telf_ale) throws InterruptedException  {
+    public IA(){
+        
+    }
+    
+    @Override
+    public void run(){
+        while (MainInterfaz.encendido!=false) {            
+            Administrador.Adminescoger();
+            
+        }
+        
+    }
+    
+    public static void decision(Telefono telf_john, Telefono telf_ale)  {
         MainInterfaz.contador+=2;
         telf_john.contador_tel=0;
         telf_ale.contador_tel=0;
@@ -82,7 +96,11 @@ public class IA extends Thread {
         
         
         if (valor <= 0.4) {
-            batalla(telf_john, telf_ale);
+            try {
+                batalla(telf_john, telf_ale);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(IA.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (valor <= 0.73 && valor > 0.4) {
             refuerzo(telf_john, telf_ale);
         } else if (valor <= 1 && valor > 0.73) {
@@ -91,7 +109,7 @@ public class IA extends Thread {
     }
 
     public static void batalla(Telefono telf_john, Telefono telf_ale) throws InterruptedException{
-
+        MainInterfaz.ganador.setText("");
         int[] mazo_john = new int[4];
         int[] mazo_ale = new int[4];
         for (int i = 0; i < 4; i++) {
@@ -109,6 +127,8 @@ public class IA extends Thread {
             MainInterfaz.inteligencia.setText("COMPITIENDO");
             score_john += mazo_john[j];
             score_ale += mazo_ale[j];
+            MainInterfaz.score1.setText(String.valueOf(score_john));
+            MainInterfaz.score2.setText(String.valueOf(score_ale));
             
             MainInterfaz.fondo1.setVisible(true);
             MainInterfaz.carta11.setVisible(false);
@@ -210,8 +230,7 @@ public class IA extends Thread {
                 MainInterfaz.carta82.setVisible(true);
             }
             long lnum= Integer.parseInt(MainInterfaz.tiempo.getText())/4;
-            TimeUnit.SECONDS.sleep(lnum);
-            //Thread.sleep(lnum);
+            Thread.sleep(lnum*1000);
         }
         
         MainInterfaz.fondo1.setVisible(true);
@@ -247,21 +266,31 @@ public class IA extends Thread {
             MainInterfaz.ganador.setText("Teléfono de la Planta 2");
         }
         
+        MainInterfaz.score1.setText("0");
+        MainInterfaz.score2.setText("0");
         
 
     }
 
-    public static void empate(Telefono telf_john, Telefono telf_ale) throws InterruptedException{
+    public static void empate(Telefono telf_john, Telefono telf_ale){
         long lnum= Integer.parseInt(MainInterfaz.tiempo.getText());
         MainInterfaz.inteligencia.setText("Analizando...");
-        TimeUnit.SECONDS.sleep(lnum);
+        try {
+            Thread.sleep(lnum*1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(IA.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Administrador.AdministrarColas(telf_john, telf_ale);
     }
 
-    public static void refuerzo(Telefono telf_john, Telefono telf_ale) throws InterruptedException{
+    public static void refuerzo(Telefono telf_john, Telefono telf_ale){
         long lnum= Integer.parseInt(MainInterfaz.tiempo.getText());
         MainInterfaz.inteligencia.setText("Analizando...");
-        TimeUnit.SECONDS.sleep(lnum);
+        try {
+            Thread.sleep(lnum*1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(IA.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Administrador.AdministrarRefuerzo(telf_john, telf_ale);
     }
 

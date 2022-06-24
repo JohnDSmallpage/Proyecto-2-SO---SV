@@ -97,7 +97,8 @@ public class Cola {
         Nodo aux= pfirst;
         if (!esta_vacia()) {
             for (int i = 0; i < size; i++) {
-                if (aux.getInfo().contador_tel!=8) {
+                if (aux!=null) {
+                    if (aux.getInfo().contador_tel!=8) {
                     aux=aux.getSiguiente();
                 }
                 else{
@@ -125,6 +126,8 @@ public class Cola {
                         return aux.getInfo();
                     }
                 }
+                }
+                
             }
         }
         return null;

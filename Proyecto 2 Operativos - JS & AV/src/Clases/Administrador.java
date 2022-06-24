@@ -134,7 +134,16 @@ public class Administrador {
         }
     }
     
-    public static void Adminescoger() throws InterruptedException{
+    public static void Adminescoger(){
+        if (MainInterfaz.primera==false) {
+            Telefono telf_john= new Telefono(0);
+            Telefono telf_ale= new Telefono(1);
+            Administrador.Agregartelf();
+            IA.decision(telf_john, telf_ale);
+            MainInterfaz.primera=true;
+        }
+        
+        
         Telefono telf_john= null;
         Telefono telf_ale= null;
         if (!MainInterfaz.cola_1_john.esta_vacia()) {
