@@ -17,7 +17,6 @@ public class IA {
     public static void decision(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
         MainInterfaz.contador+=2;
         double valor = Math.random();
-        Administrador.Admindesencola(telf_john, telf_ale);
         String cola1j = MainInterfaz.cola_1_john.Recorrer();
         String cola2j = MainInterfaz.cola_2_john.Recorrer();
         String cola3j = MainInterfaz.cola_3_john.Recorrer();
@@ -27,14 +26,24 @@ public class IA {
         String cola3a = MainInterfaz.cola_3_ale.Recorrer();
         String colara = MainInterfaz.cola_refuerzo_ale.Recorrer();
         
+        Administrador.Admindesencola(telf_john, telf_ale);
+        
         MainInterfaz.cola1john.setText(cola1j);
+        System.out.println(cola1j);
         MainInterfaz.cola2john.setText(cola2j);
+        System.out.println(cola2j);
         MainInterfaz.cola3john.setText(cola3j);
+        System.out.println(cola3j);
         MainInterfaz.colarefuerzojohn.setText(colarj);
+        System.out.println(colarj);
         MainInterfaz.cola1ale.setText(cola1a);
+        System.out.println(cola1a);
         MainInterfaz.cola2ale.setText(cola2a);
+        System.out.println(cola2a);
         MainInterfaz.cola3ale.setText(cola3a);
+        System.out.println(cola3a);
         MainInterfaz.colarefuerzoale.setText(colara);
+        System.out.println(colara);
         
         
         
@@ -63,6 +72,7 @@ public class IA {
         
 
         for (int j = 0; j < 4; j++) {
+            MainInterfaz.inteligencia.setText("COMPITIENDO");
             score_john += mazo_john[j];
             score_ale += mazo_ale[j];
             
@@ -165,7 +175,8 @@ public class IA {
                 MainInterfaz.fondo2.setVisible(false);
                 MainInterfaz.carta82.setVisible(true);
             }
-            TimeUnit.SECONDS.sleep((long) Integer.parseInt(MainInterfaz.tiempo.getText())/4);
+            long lnum= Integer.parseInt(MainInterfaz.tiempo.getText())/4;
+            TimeUnit.SECONDS.sleep(lnum);
         }
         
         MainInterfaz.fondo1.setVisible(true);
@@ -206,12 +217,16 @@ public class IA {
     }
 
     public static void empate(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
-        TimeUnit.SECONDS.sleep((long) Integer.parseInt(MainInterfaz.tiempo.getText()));
+        long lnum= Integer.parseInt(MainInterfaz.tiempo.getText());
+        MainInterfaz.inteligencia.setText("Analizando...");
+        TimeUnit.SECONDS.sleep(lnum);
         Administrador.AdministrarColas(telf_john, telf_ale);
     }
 
     public static void refuerzo(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
-        TimeUnit.SECONDS.sleep((long) Integer.parseInt(MainInterfaz.tiempo.getText()));
+        long lnum= Integer.parseInt(MainInterfaz.tiempo.getText());
+        MainInterfaz.inteligencia.setText("Analizando...");
+        TimeUnit.SECONDS.sleep(lnum);
         Administrador.AdministrarRefuerzo(telf_john, telf_ale);
     }
 

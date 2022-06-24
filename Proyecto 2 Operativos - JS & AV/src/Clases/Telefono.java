@@ -28,18 +28,20 @@ public class Telefono {
             this.nro_pin = 1;
             this.camara = 4;
             this.botones = 3;
-            this.tipo_material= MainInterfaz.tipo_material[(int) Math.floor(Math.random()*(4-0+1)+0)];
+            this.tipo_material= MainInterfaz.tipo_material[(int) Math.floor(Math.random()*(3-0+1)+0)];
             this.contador_tel=0;
             SistemaCopas();
         }
         else{
-            this.ID = 0;
+            this.ID = MainInterfaz.ID_global+1;
             this.copas = 0;
             this.nro_pantallas = 1;
             this.nro_pin = 1;
             this.camara = 4;
             this.botones = 3;
-            this.tipo_material= MainInterfaz.tipo_material[(int) Math.floor(Math.random()*(4-0+1)+0)];
+            this.tipo_material= MainInterfaz.tipo_material[(int) Math.floor(Math.random()*(3-0+1)+0)];
+            this.contador_tel=0;
+            SistemaCopas();
         }
     }
     

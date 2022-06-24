@@ -67,11 +67,14 @@ public class Cola {
     }
 
     public void Desencolar() {
-        pfirst = pfirst.getSiguiente();
+        if (!esta_vacia()) {
+           pfirst = pfirst.getSiguiente();
         size--;
         if (pfirst == null) {
             plast = null;
+        } 
         }
+        
 
     }
 

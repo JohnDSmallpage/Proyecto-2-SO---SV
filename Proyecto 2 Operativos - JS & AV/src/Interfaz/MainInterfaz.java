@@ -7,6 +7,7 @@ package Interfaz;
 import Clases.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,6 +32,7 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static int ID_global;
     public static int vendidos_john;
     public static int vendidos_ale;
+    public static int tiempo_global;
     
     
     
@@ -60,11 +62,13 @@ public class MainInterfaz extends javax.swing.JFrame {
         this.ID_global=0;
         this.vendidos_john=0;
         this.vendidos_ale=0;
+        this.tiempo_global=11;
         
         tipo_material[0]="Madera";
         tipo_material[1]="Aluminio";
         tipo_material[2]="Oro";
         tipo_material[3]="Diamante";
+        tiempo.setText(String.valueOf(tiempo_global));
         cartas[0]=1;
         cartas[1]=2;
         cartas[2]=3;
@@ -104,7 +108,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         colarefuerzojohn = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        inteligencia = new javax.swing.JTextField();
         cola2ale = new javax.swing.JTextField();
         cola3ale = new javax.swing.JTextField();
         colarefuerzoale = new javax.swing.JTextField();
@@ -160,12 +164,22 @@ public class MainInterfaz extends javax.swing.JFrame {
         menos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/menos.png"))); // NOI18N
         menos.setBorderPainted(false);
         menos.setContentAreaFilled(false);
+        menos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menosActionPerformed(evt);
+            }
+        });
         jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 600, 40, 30));
 
         mas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfazimg/newpackage/mas.png"))); // NOI18N
         mas.setBorderPainted(false);
         mas.setContentAreaFilled(false);
         mas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        mas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                masActionPerformed(evt);
+            }
+        });
         jPanel1.add(mas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, 40, 30));
 
         cola1john.setEditable(false);
@@ -262,16 +276,16 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 54, -1));
 
-        jTextField6.setEditable(false);
-        jTextField6.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField6.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        inteligencia.setEditable(false);
+        inteligencia.setBackground(new java.awt.Color(204, 204, 204));
+        inteligencia.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        inteligencia.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        inteligencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                inteligenciaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 140, 30));
+        jPanel1.add(inteligencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 140, 30));
 
         cola2ale.setEditable(false);
         cola2ale.setBackground(new java.awt.Color(204, 204, 204));
@@ -368,7 +382,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         jLabel25.setBackground(new java.awt.Color(255, 255, 255));
         jLabel25.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("GANADOR");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 150, 40));
@@ -404,7 +417,6 @@ public class MainInterfaz extends javax.swing.JFrame {
 
         ganador.setEditable(false);
         ganador.setBackground(new java.awt.Color(255, 255, 255));
-        ganador.setForeground(new java.awt.Color(0, 0, 0));
         ganador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ganador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -648,9 +660,9 @@ public class MainInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cola3johnActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void inteligenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inteligenciaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_inteligenciaActionPerformed
 
     private void cola2aleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cola2aleActionPerformed
         // TODO add your handling code here:
@@ -700,6 +712,7 @@ public class MainInterfaz extends javax.swing.JFrame {
             } catch (InterruptedException ex) {
                 Logger.getLogger(MainInterfaz.class.getName()).log(Level.SEVERE, null, ex);
             }
+            ID_global+=1;
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -727,6 +740,23 @@ public class MainInterfaz extends javax.swing.JFrame {
     private void ganadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ganadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ganadorActionPerformed
+
+    private void masActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masActionPerformed
+        // TODO add your handling code here:
+        tiempo_global+=1;
+        tiempo.setText(String.valueOf(tiempo_global));
+    }//GEN-LAST:event_masActionPerformed
+
+    private void menosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menosActionPerformed
+        // TODO add your handling code here:
+        tiempo_global-=1;
+        if (tiempo_global<=0) {
+            JOptionPane.showMessageDialog(null, "El tiempo no puede ser negativo");
+            tiempo_global+=1;
+            return;
+        }
+        tiempo.setText(String.valueOf(tiempo_global));
+    }//GEN-LAST:event_menosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -791,6 +821,7 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static javax.swing.JLabel fondo1;
     public static javax.swing.JLabel fondo2;
     public static javax.swing.JTextField ganador;
+    public static javax.swing.JTextField inteligencia;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -824,7 +855,6 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextField14;
     public static javax.swing.JTextField jTextField15;
     public static javax.swing.JTextField jTextField16;
-    public static javax.swing.JTextField jTextField6;
     private javax.swing.JButton mas;
     private javax.swing.JButton menos;
     public static javax.swing.JTextField tiempo;
