@@ -62,6 +62,9 @@ public class Administrador {
     
     
     public static void SalirDeRefuerzo(){
+        if (MainInterfaz.cola_refuerzo_john.esta_vacia() || MainInterfaz.cola_refuerzo_ale.esta_vacia() ) {
+            return;
+        }
         Telefono telf_john= MainInterfaz.cola_refuerzo_john.Leer_cabeza();
         Telefono telf_ale= MainInterfaz.cola_refuerzo_ale.Leer_cabeza();
         
