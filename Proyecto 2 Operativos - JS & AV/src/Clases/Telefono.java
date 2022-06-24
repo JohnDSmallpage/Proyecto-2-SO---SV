@@ -11,7 +11,7 @@ import Interfaz.*;
  * @author johnd
  */
 public class Telefono {
-    public int ID;
+    public String ID;
     public int copas;
     public int nro_pantallas;
     public int nro_pin;
@@ -22,7 +22,7 @@ public class Telefono {
 
     public Telefono(int identificador) {
         if (identificador==0) {
-            this.ID = MainInterfaz.ID_global+1;
+            this.ID = "XPro" +String.valueOf(MainInterfaz.ID_global+1);
             this.copas = 0;
             this.nro_pantallas = 2;
             this.nro_pin = 1;
@@ -33,7 +33,7 @@ public class Telefono {
             SistemaCopas();
         }
         else{
-            this.ID = MainInterfaz.ID_global+1;
+            this.ID = "XIV" +String.valueOf(MainInterfaz.ID_global+1);;
             this.copas = 0;
             this.nro_pantallas = 1;
             this.nro_pin = 1;
@@ -79,11 +79,11 @@ public class Telefono {
         }
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 

@@ -84,6 +84,59 @@ public class Cola {
         if (!esta_vacia()) {
             for (int i = 0; i <size; i++) {
                 if(aux != null){
+                aux.getInfo().contador_tel+=1;
+                palabra+=String.valueOf(aux.getInfo().ID)+"\n";
+                aux = aux.getSiguiente();
+                }
+            } 
+        }
+    return palabra;
+    }
+    
+    public Telefono Mover(){
+        Nodo aux= pfirst;
+        if (!esta_vacia()) {
+            for (int i = 0; i < size; i++) {
+                if (aux.getInfo().contador_tel!=8) {
+                    aux=aux.getSiguiente();
+                }
+                else{
+                    if (aux==pfirst) {
+                        pfirst=aux.getSiguiente();
+                        return aux.getInfo();
+                    }
+                    else if(aux==plast){
+                        Nodo aux_2=pfirst;
+                        while (aux_2.getSiguiente()!=plast) {                            
+                            aux_2=aux_2.getSiguiente();
+                        }
+                        aux_2.setSiguiente(null);
+                        Nodo aux_3= plast;
+                        plast=aux_2;
+                        return aux_3.getInfo();
+                        
+                    }
+                    else{
+                        Nodo aux_2= pfirst;
+                        while (aux_2.getSiguiente()!=aux) {                            
+                            aux_2=aux_2.getSiguiente();
+                        }
+                        aux_2.setSiguiente(aux.getSiguiente());
+                        return aux.getInfo();
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    
+    public String recorrido(){
+        String palabra = "";
+        Nodo aux = pfirst;
+        if (!esta_vacia()) {
+            for (int i = 0; i <size; i++) {
+                if(aux != null){
+                aux.getInfo().contador_tel+=1;
                 palabra+=String.valueOf(aux.getInfo().ID)+"\n";
                 aux = aux.getSiguiente();
                 }

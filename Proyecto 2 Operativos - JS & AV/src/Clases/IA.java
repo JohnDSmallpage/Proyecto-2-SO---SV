@@ -12,11 +12,15 @@ import java.util.concurrent.TimeUnit;
  *
  * @author johnd
  */
-public class IA {
+public class IA extends Thread {
+    
 
-    public static void decision(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
+    public static void decision(Telefono telf_john, Telefono telf_ale) throws InterruptedException  {
         MainInterfaz.contador+=2;
+        telf_john.contador_tel=0;
+        telf_ale.contador_tel=0;
         double valor = Math.random();
+        
         String cola1j = MainInterfaz.cola_1_john.Recorrer();
         String cola2j = MainInterfaz.cola_2_john.Recorrer();
         String cola3j = MainInterfaz.cola_3_john.Recorrer();
@@ -26,7 +30,37 @@ public class IA {
         String cola3a = MainInterfaz.cola_3_ale.Recorrer();
         String colara = MainInterfaz.cola_refuerzo_ale.Recorrer();
         
-        Administrador.Admindesencola(telf_john, telf_ale);
+        MainInterfaz.cola1john.setText(cola1j);
+        System.out.println(cola1j);
+        MainInterfaz.cola2john.setText(cola2j);
+        System.out.println(cola2j);
+        MainInterfaz.cola3john.setText(cola3j);
+        System.out.println(cola3j);
+        MainInterfaz.colarefuerzojohn.setText(colarj);
+        System.out.println(colarj);
+        MainInterfaz.cola1ale.setText(cola1a);
+        System.out.println(cola1a);
+        MainInterfaz.cola2ale.setText(cola2a);
+        System.out.println(cola2a);
+        MainInterfaz.cola3ale.setText(cola3a);
+        System.out.println(cola3a);
+        MainInterfaz.colarefuerzoale.setText(colara);
+        System.out.println(colara);
+        
+        Administrador.MoverTelefonos();
+        
+        cola1j = MainInterfaz.cola_1_john.Recorrer();
+        cola2j = MainInterfaz.cola_2_john.Recorrer();
+        cola3j = MainInterfaz.cola_3_john.Recorrer();
+        colarj = MainInterfaz.cola_refuerzo_john.Recorrer();
+        cola1a = MainInterfaz.cola_1_ale.Recorrer();
+        cola2a = MainInterfaz.cola_2_ale.Recorrer();
+        cola3a = MainInterfaz.cola_3_ale.Recorrer();
+        colara = MainInterfaz.cola_refuerzo_ale.Recorrer();
+        
+        
+        
+        //Administrador.Admindesencola(telf_john, telf_ale);
         
         MainInterfaz.cola1john.setText(cola1j);
         System.out.println(cola1j);
@@ -56,7 +90,7 @@ public class IA {
         }
     }
 
-    public static void batalla(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
+    public static void batalla(Telefono telf_john, Telefono telf_ale) throws InterruptedException{
 
         int[] mazo_john = new int[4];
         int[] mazo_ale = new int[4];
@@ -177,6 +211,7 @@ public class IA {
             }
             long lnum= Integer.parseInt(MainInterfaz.tiempo.getText())/4;
             TimeUnit.SECONDS.sleep(lnum);
+            //Thread.sleep(lnum);
         }
         
         MainInterfaz.fondo1.setVisible(true);
@@ -216,14 +251,14 @@ public class IA {
 
     }
 
-    public static void empate(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
+    public static void empate(Telefono telf_john, Telefono telf_ale) throws InterruptedException{
         long lnum= Integer.parseInt(MainInterfaz.tiempo.getText());
         MainInterfaz.inteligencia.setText("Analizando...");
         TimeUnit.SECONDS.sleep(lnum);
         Administrador.AdministrarColas(telf_john, telf_ale);
     }
 
-    public static void refuerzo(Telefono telf_john, Telefono telf_ale) throws InterruptedException {
+    public static void refuerzo(Telefono telf_john, Telefono telf_ale) throws InterruptedException{
         long lnum= Integer.parseInt(MainInterfaz.tiempo.getText());
         MainInterfaz.inteligencia.setText("Analizando...");
         TimeUnit.SECONDS.sleep(lnum);
