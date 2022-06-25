@@ -46,7 +46,12 @@ public class Cola {
     }
 
     public boolean esta_vacia() {
-        return size == 0 || pfirst==null;
+        return size == 0 || pfirst == null;
+    }
+    
+    public void Vaciar(){
+        pfirst=null;
+        plast=null;
     }
 
     public Telefono Leer_cabeza() {
@@ -68,96 +73,97 @@ public class Cola {
 
     public void Desencolar() {
         if (!esta_vacia()) {
-           pfirst = pfirst.getSiguiente();
-        size--;
-        if (pfirst == null) {
-            plast = null;
-        } 
+            pfirst = pfirst.getSiguiente();
+            size--;
+            if (pfirst == null) {
+                plast = null;
+            }
         }
-        
 
     }
 
-    public String Recorrer() {
-        String palabra = "";
+    public void Recorrer() {
+
         Nodo aux = pfirst;
         if (!esta_vacia()) {
-            for (int i = 0; i <size; i++) {
-                if(aux != null){
-                aux.getInfo().contador_tel+=2;
-                palabra+=String.valueOf(aux.getInfo().ID)+"\n";
-                aux = aux.getSiguiente();
+            for (int i = 0; i < size; i++) {
+                if (aux != null) {
+                    aux.getInfo().contador_tel += 2;
+                    aux = aux.getSiguiente();
                 }
-            } 
+            }
         }
-    return palabra;
     }
-    
-    public Cola Mover(){
-        Nodo aux= pfirst;
-        Cola cola= new Cola();
+
+    public Cola Mover() {
+        Nodo aux = pfirst;
+        Cola cola = new Cola();
         if (!esta_vacia()) {
             for (int i = 0; i < size; i++) {
-                if (aux!=null) {
-                    if (aux.getInfo().contador_tel<8) {
-                    aux=aux.getSiguiente();
-                }
-                else{
-                    if (aux==pfirst) {
-                        pfirst=aux.getSiguiente();
+                if (aux != null) {
+                    if (aux.getInfo().contador_tel < 8) {
+                        aux = aux.getSiguiente();
+                    } 
+                    else {
                         cola.Encolar(aux.getInfo());
-                    }
-                    else if(aux==plast){
-                        Nodo aux_2=pfirst;
-                        while (aux_2.getSiguiente()!=plast) {                            
-                            aux_2=aux_2.getSiguiente();
-                        }
-                        aux_2.setSiguiente(null);
-                        Nodo aux_3= plast;
-                        plast=aux_2;
-                        cola.Encolar(aux_3.getInfo());
-                        
-                    }
-                    else{
-                        Nodo aux_2= pfirst;
-                        while (aux_2.getSiguiente()!=aux) {                            
-                            aux_2=aux_2.getSiguiente();
-                        }
-                        aux_2.setSiguiente(aux.getSiguiente());
-                        cola.Encolar(aux.getInfo());
+//                else{
+//                    if (aux==pfirst) {
+//                        pfirst=aux.getSiguiente();
+//                        cola.Encolar(aux.getInfo());
+//                        size--;
+//                    }
+//                    else if(aux==plast){
+//                        Nodo aux_2=pfirst;
+//                        while (aux_2.getSiguiente()!=plast) {                            
+//                            aux_2=aux_2.getSiguiente();
+//                        }
+//                        cola.Encolar(plast.getInfo());
+//                        plast=aux_2;
+//                        aux_2.setSiguiente(null);
+//                        size--;
+//                        
+//                    }
+//                    else{
+//                        Nodo aux_2= pfirst;
+//                        while (aux_2.getSiguiente()!=aux && aux_2.getSiguiente()!=null) {                            
+//                            aux_2=aux_2.getSiguiente();
+//                        }
+//                        aux_2.setSiguiente(aux.getSiguiente());
+//                        cola.Encolar(aux.getInfo());
+//                        size--;
+//                    }
                     }
                 }
-                }
-                
+
             }
         }
         return cola;
     }
-    
-    public String recorrido(){
+
+    public String recorrido() {
         String palabra = "";
         Nodo aux = pfirst;
         if (!esta_vacia()) {
-            for (int i = 0; i <size; i++) {
-                if(aux != null){
-                palabra+=String.valueOf(aux.getInfo().ID)+"\n";
-                aux = aux.getSiguiente();
+            for (int i = 0; i < size; i++) {
+                if (aux != null) {
+                    palabra += String.valueOf(aux.getInfo().ID) + "\n";
+                    aux = aux.getSiguiente();
                 }
-            } 
+            }
         }
-    return palabra;
+        return palabra;
     }
-    
-    public void recorridoprueba(){
+
+    public void recorridoprueba() {
         String palabra = "";
         Nodo aux = pfirst;
         if (!esta_vacia()) {
-            for (int i = 0; i <size; i++) {
-                if(aux != null){
-                palabra+=String.valueOf(aux.getInfo().ID)+" ";
-                aux = aux.getSiguiente();
+            for (int i = 0; i < size; i++) {
+                if (aux != null) {
+                    palabra += String.valueOf(aux.getInfo().ID) + " ";
+                    aux = aux.getSiguiente();
                 }
-            } 
+            }
             System.out.print(palabra);
         }
     }

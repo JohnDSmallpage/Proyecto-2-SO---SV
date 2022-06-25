@@ -48,7 +48,6 @@ public class MainInterfaz extends javax.swing.JFrame {
         this.setSize(800,700);
         this.setLocationRelativeTo(null);
         this.admin= new Administrador();
-        this.ia= new IA();
         this.cola_1_john= new Cola();
         this.cola_2_john= new Cola();
         this.cola_3_john= new Cola();
@@ -697,12 +696,50 @@ public class MainInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Borrar colas antes
         encendido=true;
+        this.ia= new IA();
         ia.start();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         encendido=false;
+        ia.stop();
+        ia=null;
+        cola_1_john.Vaciar();
+        cola_2_john.Vaciar();
+        cola_3_john.Vaciar();
+        cola_refuerzo_john.Vaciar();
+        cola_1_ale.Vaciar();
+        cola_2_ale.Vaciar();
+        cola_3_ale.Vaciar();
+        cola_refuerzo_ale.Vaciar();
+        contador=0;
+        ID_global=0;
+        vendidos_john=0;
+        vendidos_ale=0;
+        primera=true;
+        cola1john.setText("");
+        cola2john.setText("");
+        cola3john.setText("");
+        colarefuerzojohn.setText("");
+        cola1ale.setText("");
+        cola2ale.setText("");
+        cola3ale.setText("");
+        colarefuerzoale.setText("");
+        adminacciones.setText("");
+        inteligencia.setText("");
+        ganador.setText("");
+        vendidoJohn.setText("");
+        vendidoAle.setText("");
+        telf1.setText("");
+        telf2.setText("");
+        movejohn.setText("");
+        moveale.setText("");
+        colasvacias.setText("");
+        score1.setText("");
+        score2.setText("");
+        contador4.setText("");
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void adminaccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminaccionesActionPerformed
@@ -743,7 +780,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         }
         tiempo_global-=1;
         if (tiempo_global<=0) {
-            JOptionPane.showMessageDialog(null, "El tiempo no puede ser negativo");
+            JOptionPane.showMessageDialog(null, "El tiempo no puede ser negativo o igual a 0");
             tiempo_global+=1;
             return;
         }

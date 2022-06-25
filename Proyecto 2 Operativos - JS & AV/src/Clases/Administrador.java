@@ -192,6 +192,9 @@ public class Administrador {
         
         if (telf_john==null || telf_ale==null) {
             Agregartelf();
+            if (Math.random()<0.4) {
+                SalirDeRefuerzo();
+            }
             System.out.println("AGREGANDO TELF");
             MainInterfaz.inteligencia.setText("Agregando tlf...");
             MainInterfaz.colasvacias.setText("Colas vacías\n Se crea tlf y pasa a IA");
@@ -248,69 +251,140 @@ public class Administrador {
     
     public static void MoverTelefonos(){
         
-        if (!MainInterfaz.cola_2_john.esta_vacia()) {
-            Cola cola_2_j= MainInterfaz.cola_2_john.Mover();
-            if (!cola_2_j.esta_vacia()) {
-                for (int i = 0; i < cola_2_j.getSize(); i++) {
-                    Telefono telf_john= cola_2_j.Leer_cabeza();
-                    cola_2_j.Desencolar();
+     
+            while (!MainInterfaz.cola_2_john.esta_vacia()) {                
+                if (MainInterfaz.cola_2_john.Leer_cabeza().contador_tel==8) {
+                    Telefono telf_john= MainInterfaz.cola_2_john.Leer_cabeza();
+                    telf_john.contador_tel=0;
+                    MainInterfaz.cola_2_john.Desencolar();
                     MainInterfaz.cola_1_john.Encolar(telf_john);
                     MainInterfaz.movejohn.setText("Se movió cola 2 " + telf_john.getID());
-                    
+                    ImprimirPantalla();
                 }
-                
-                ImprimirPantalla(); 
-                
+                else{
+                    break;
+                }
             }
-        }
         
-        if (!MainInterfaz.cola_3_john.esta_vacia()) {
-            Cola cola_3_j= MainInterfaz.cola_3_john.Mover();
-            if (!cola_3_j.esta_vacia()) {
-                for (int i = 0; i < cola_3_j.getSize(); i++) {
-                    Telefono telf_john= cola_3_j.Leer_cabeza();
-                    cola_3_j.Desencolar();
+        
+            while (!MainInterfaz.cola_3_john.esta_vacia()) {                
+                if (MainInterfaz.cola_3_john.Leer_cabeza().contador_tel==8) {
+                    Telefono telf_john= MainInterfaz.cola_3_john.Leer_cabeza();
+                    telf_john.contador_tel=0;
+                    MainInterfaz.cola_3_john.Desencolar();
                     MainInterfaz.cola_2_john.Encolar(telf_john);
                     MainInterfaz.movejohn.setText("Se movió cola 3 " + telf_john.getID());
-                    
+                    ImprimirPantalla();
                 }
-                
-                ImprimirPantalla(); 
-                
+                else{
+                    break;
+                }
             }
-        }
         
-        if (!MainInterfaz.cola_2_ale.esta_vacia()) {
-            Cola cola_2_a= MainInterfaz.cola_2_ale.Mover();
-            if (!cola_2_a.esta_vacia()) {
-                for (int i = 0; i < cola_2_a.getSize(); i++) {
-                    Telefono telf_ale= cola_2_a.Leer_cabeza();
-                    cola_2_a.Desencolar();
+        
+            while (!MainInterfaz.cola_2_ale.esta_vacia()) {                
+                if (MainInterfaz.cola_2_ale.Leer_cabeza().contador_tel==8) {
+                    Telefono telf_ale= MainInterfaz.cola_2_ale.Leer_cabeza();
+                    telf_ale.contador_tel=0;
+                    MainInterfaz.cola_2_ale.Desencolar();
                     MainInterfaz.cola_1_ale.Encolar(telf_ale);
                     MainInterfaz.moveale.setText("Se movió cola 2 " + telf_ale.getID());
-                    
+                    ImprimirPantalla();
                 }
-                
-                ImprimirPantalla(); 
-                
+                else{
+                    break;
+                }
             }
-        }
         
-        if (!MainInterfaz.cola_3_ale.esta_vacia()) {
-            Cola cola_3_a= MainInterfaz.cola_3_ale.Mover();
-            if (!cola_3_a.esta_vacia()) {
-                for (int i = 0; i < cola_3_a.getSize(); i++) {
-                    Telefono telf_ale= cola_3_a.Leer_cabeza();
-                    cola_3_a.Desencolar();
+        
+        
+            while (!MainInterfaz.cola_3_ale.esta_vacia()) {                
+                if (MainInterfaz.cola_3_ale.Leer_cabeza().contador_tel==8) {
+                    Telefono telf_ale= MainInterfaz.cola_3_ale.Leer_cabeza();
+                    telf_ale.contador_tel=0;
+                    MainInterfaz.cola_3_ale.Desencolar();
                     MainInterfaz.cola_2_ale.Encolar(telf_ale);
                     MainInterfaz.moveale.setText("Se movió cola 3 " + telf_ale.getID());
-                    
+                    ImprimirPantalla();
                 }
-                
-                ImprimirPantalla(); 
-                
+                else{
+                    break;
+                }
             }
-        }
+        
+        
+//        if (!MainInterfaz.cola_2_john.esta_vacia()) {
+//            Cola cola_2_j= MainInterfaz.cola_2_john.Mover();
+//            if (!cola_2_j.esta_vacia()) {
+//                for (int i = 0; i < cola_2_j.getSize(); i++) {
+//                    Telefono telf_john= cola_2_j.Leer_cabeza();
+//                    cola_2_j.Desencolar();
+//                    MainInterfaz.cola_2_john.Desencolar();
+//                    telf_john.contador_tel=0;
+//                    MainInterfaz.cola_1_john.Encolar(telf_john);
+//                    MainInterfaz.movejohn.setText("Se movió cola 2 " + telf_john.getID());
+//                    ImprimirPantalla();
+//                }
+//                
+//                 
+//                
+//            }
+//        }
+//        
+//        if (!MainInterfaz.cola_3_john.esta_vacia()) {
+//            Cola cola_3_j= MainInterfaz.cola_3_john.Mover();
+//            if (!cola_3_j.esta_vacia()) {
+//                for (int i = 0; i < cola_3_j.getSize(); i++) {
+//                    Telefono telf_john= cola_3_j.Leer_cabeza();
+//                    cola_3_j.Desencolar();
+//                    MainInterfaz.cola_3_john.Desencolar();
+//                    telf_john.contador_tel=0;
+//                    MainInterfaz.cola_2_john.Encolar(telf_john);
+//                    MainInterfaz.movejohn.setText("Se movió cola 3 " + telf_john.getID());
+//                    ImprimirPantalla();
+//                }
+//                
+//                 
+//                
+//            }
+//        }
+//        
+//        if (!MainInterfaz.cola_2_ale.esta_vacia()) {
+//            Cola cola_2_a= MainInterfaz.cola_2_ale.Mover();
+//            if (!cola_2_a.esta_vacia()) {
+//                for (int i = 0; i < cola_2_a.getSize(); i++) {
+//                    Telefono telf_ale= cola_2_a.Leer_cabeza();
+//                    cola_2_a.Desencolar();
+//                    MainInterfaz.cola_2_ale.Desencolar();;
+//                    telf_ale.contador_tel=0;
+//                    MainInterfaz.cola_1_ale.Encolar(telf_ale);
+//                    MainInterfaz.moveale.setText("Se movió cola 2 " + telf_ale.getID());
+//                    ImprimirPantalla();
+//                }
+//                
+//                 
+//                
+//            }
+//        }
+//        
+//        if (!MainInterfaz.cola_3_ale.esta_vacia()) {
+//            Cola cola_3_a= MainInterfaz.cola_3_ale.Mover();
+//            if (!cola_3_a.esta_vacia()) {
+//                for (int i = 0; i < cola_3_a.getSize(); i++) {
+//                    Telefono telf_ale= cola_3_a.Leer_cabeza();
+//                    cola_3_a.Desencolar();
+//                    MainInterfaz.cola_3_ale.Desencolar();
+//                    telf_ale.contador_tel=0;
+//                    MainInterfaz.cola_2_ale.Encolar(telf_ale);
+//                    MainInterfaz.moveale.setText("Se movió cola 3 " + telf_ale.getID());
+//                    ImprimirPantalla(); 
+//                    
+//                }
+//                
+//                
+//                
+//            }
+//        }
         
         
         

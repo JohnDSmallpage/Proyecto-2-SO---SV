@@ -40,17 +40,13 @@ public class IA extends Thread {
         telf_ale.contador_tel=0;
         double valor = Math.random();
         
-        String cola1j = MainInterfaz.cola_1_john.Recorrer();
-        String cola2j = MainInterfaz.cola_2_john.Recorrer();
-        String cola3j = MainInterfaz.cola_3_john.Recorrer();
-        String colarj = MainInterfaz.cola_refuerzo_john.Recorrer();
-        String cola1a = MainInterfaz.cola_1_ale.Recorrer();
-        String cola2a = MainInterfaz.cola_2_ale.Recorrer();
-        String cola3a = MainInterfaz.cola_3_ale.Recorrer();
-        String colara = MainInterfaz.cola_refuerzo_ale.Recorrer();
+        MainInterfaz.cola_2_john.Recorrer();
+        MainInterfaz.cola_3_john.Recorrer();
+        MainInterfaz.cola_2_ale.Recorrer();
+        MainInterfaz.cola_3_ale.Recorrer();
         
         
-//        Administrador.MoverTelefonos();
+        Administrador.MoverTelefonos();
         
         Administrador.ImprimirPantalla();
         
