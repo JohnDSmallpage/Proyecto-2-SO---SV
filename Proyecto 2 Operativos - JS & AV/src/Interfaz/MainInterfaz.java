@@ -698,21 +698,6 @@ public class MainInterfaz extends javax.swing.JFrame {
         encendido=true;
         this.ia= new IA();
         ia.start();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        encendido=false;
-        ia.stop();
-        ia=null;
-        cola_1_john.Vaciar();
-        cola_2_john.Vaciar();
-        cola_3_john.Vaciar();
-        cola_refuerzo_john.Vaciar();
-        cola_1_ale.Vaciar();
-        cola_2_ale.Vaciar();
-        cola_3_ale.Vaciar();
-        cola_refuerzo_ale.Vaciar();
         contador=0;
         ID_global=0;
         vendidos_john=0;
@@ -739,6 +724,22 @@ public class MainInterfaz extends javax.swing.JFrame {
         score1.setText("");
         score2.setText("");
         contador4.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        encendido=false;
+        ia.stop();
+        ia=null;
+        cola_1_john.Vaciar();
+        cola_2_john.Vaciar();
+        cola_3_john.Vaciar();
+        cola_refuerzo_john.Vaciar();
+        cola_1_ale.Vaciar();
+        cola_2_ale.Vaciar();
+        cola_3_ale.Vaciar();
+        cola_refuerzo_ale.Vaciar();
+        
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
