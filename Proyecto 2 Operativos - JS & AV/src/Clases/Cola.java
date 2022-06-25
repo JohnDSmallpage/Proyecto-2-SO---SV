@@ -46,7 +46,7 @@ public class Cola {
     }
 
     public boolean esta_vacia() {
-        return size == 0;
+        return size == 0 || pfirst==null;
     }
 
     public Telefono Leer_cabeza() {
@@ -84,7 +84,7 @@ public class Cola {
         if (!esta_vacia()) {
             for (int i = 0; i <size; i++) {
                 if(aux != null){
-                aux.getInfo().contador_tel+=1;
+                aux.getInfo().contador_tel+=2;
                 palabra+=String.valueOf(aux.getInfo().ID)+"\n";
                 aux = aux.getSiguiente();
                 }
@@ -93,18 +93,19 @@ public class Cola {
     return palabra;
     }
     
-    public Telefono Mover(){
+    public Cola Mover(){
         Nodo aux= pfirst;
+        Cola cola= new Cola();
         if (!esta_vacia()) {
             for (int i = 0; i < size; i++) {
                 if (aux!=null) {
-                    if (aux.getInfo().contador_tel!=8) {
+                    if (aux.getInfo().contador_tel<8) {
                     aux=aux.getSiguiente();
                 }
                 else{
                     if (aux==pfirst) {
                         pfirst=aux.getSiguiente();
-                        return aux.getInfo();
+                        cola.Encolar(aux.getInfo());
                     }
                     else if(aux==plast){
                         Nodo aux_2=pfirst;
@@ -114,7 +115,7 @@ public class Cola {
                         aux_2.setSiguiente(null);
                         Nodo aux_3= plast;
                         plast=aux_2;
-                        return aux_3.getInfo();
+                        cola.Encolar(aux_3.getInfo());
                         
                     }
                     else{
@@ -123,14 +124,14 @@ public class Cola {
                             aux_2=aux_2.getSiguiente();
                         }
                         aux_2.setSiguiente(aux.getSiguiente());
-                        return aux.getInfo();
+                        cola.Encolar(aux.getInfo());
                     }
                 }
                 }
                 
             }
         }
-        return null;
+        return cola;
     }
     
     public String recorrido(){
@@ -139,13 +140,26 @@ public class Cola {
         if (!esta_vacia()) {
             for (int i = 0; i <size; i++) {
                 if(aux != null){
-                aux.getInfo().contador_tel+=1;
                 palabra+=String.valueOf(aux.getInfo().ID)+"\n";
                 aux = aux.getSiguiente();
                 }
             } 
         }
     return palabra;
+    }
+    
+    public void recorridoprueba(){
+        String palabra = "";
+        Nodo aux = pfirst;
+        if (!esta_vacia()) {
+            for (int i = 0; i <size; i++) {
+                if(aux != null){
+                palabra+=String.valueOf(aux.getInfo().ID)+" ";
+                aux = aux.getSiguiente();
+                }
+            } 
+            System.out.print(palabra);
+        }
     }
 
 }

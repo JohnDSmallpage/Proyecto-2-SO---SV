@@ -132,14 +132,20 @@ public class MainInterfaz extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        vendidoAle = new javax.swing.JTextField();
+        vendidoJohn = new javax.swing.JTextField();
         tiempo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        contador4 = new javax.swing.JTextField();
+        colasvacias = new javax.swing.JTextField();
         ganador = new javax.swing.JTextField();
         score1 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        movejohn = new javax.swing.JTextField();
+        moveale = new javax.swing.JTextField();
+        adminacciones = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -162,8 +168,8 @@ public class MainInterfaz extends javax.swing.JFrame {
         carta22 = new javax.swing.JLabel();
         carta11 = new javax.swing.JLabel();
         carta12 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        telf2 = new javax.swing.JTextField();
+        telf1 = new javax.swing.JTextField();
         score2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
@@ -194,41 +200,49 @@ public class MainInterfaz extends javax.swing.JFrame {
         jPanel1.add(mas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, 40, 30));
 
         colarefuerzoale.setEditable(false);
+        colarefuerzoale.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jScrollPane8.setViewportView(colarefuerzoale);
 
         jPanel1.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 40, 160));
 
         cola3ale.setEditable(false);
+        cola3ale.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jScrollPane7.setViewportView(cola3ale);
 
         jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 40, 160));
 
         cola2ale.setEditable(false);
+        cola2ale.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jScrollPane6.setViewportView(cola2ale);
 
         jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 40, 160));
 
         cola1ale.setEditable(false);
+        cola1ale.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jScrollPane5.setViewportView(cola1ale);
 
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 40, 160));
 
         colarefuerzojohn.setEditable(false);
+        colarefuerzojohn.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jScrollPane4.setViewportView(colarefuerzojohn);
 
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 40, 160));
 
         cola3john.setEditable(false);
+        cola3john.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jScrollPane3.setViewportView(cola3john);
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 40, 160));
 
         cola2john.setEditable(false);
+        cola2john.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jScrollPane2.setViewportView(cola2john);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 40, 160));
 
         cola1john.setEditable(false);
+        cola1john.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jScrollPane1.setViewportView(cola1john);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 160));
@@ -320,7 +334,7 @@ public class MainInterfaz extends javax.swing.JFrame {
                 inteligenciaActionPerformed(evt);
             }
         });
-        jPanel1.add(inteligencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 140, 30));
+        jPanel1.add(inteligencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 160, 30));
 
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -366,6 +380,28 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel25.setText("GANADOR");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 150, 40));
 
+        vendidoAle.setEditable(false);
+        vendidoAle.setBackground(new java.awt.Color(204, 204, 204));
+        vendidoAle.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        vendidoAle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        vendidoAle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vendidoAleActionPerformed(evt);
+            }
+        });
+        jPanel1.add(vendidoAle, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 50, -1));
+
+        vendidoJohn.setEditable(false);
+        vendidoJohn.setBackground(new java.awt.Color(204, 204, 204));
+        vendidoJohn.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        vendidoJohn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        vendidoJohn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vendidoJohnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(vendidoJohn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 50, -1));
+
         tiempo.setEditable(false);
         tiempo.setBackground(new java.awt.Color(204, 204, 204));
         tiempo.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -395,6 +431,28 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel14.setText("INTELIGENCIA ARTIFICIAL");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 190, 30));
 
+        contador4.setEditable(false);
+        contador4.setBackground(new java.awt.Color(255, 255, 255));
+        contador4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        contador4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contador4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contador4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(contador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 150, 70));
+
+        colasvacias.setEditable(false);
+        colasvacias.setBackground(new java.awt.Color(255, 255, 255));
+        colasvacias.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        colasvacias.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        colasvacias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colasvaciasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(colasvacias, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 580, 150, 70));
+
         ganador.setEditable(false);
         ganador.setBackground(new java.awt.Color(255, 255, 255));
         ganador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -420,17 +478,19 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("COLA 3");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 80, 30));
+        jPanel1.add(movejohn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 630, 270, 20));
+        jPanel1.add(moveale, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 630, 270, 20));
 
-        jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField13.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        adminacciones.setEditable(false);
+        adminacciones.setBackground(new java.awt.Color(204, 204, 204));
+        adminacciones.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        adminacciones.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminacciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                adminaccionesActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 140, 30));
+        jPanel1.add(adminacciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 140, 30));
 
         jLabel27.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -573,27 +633,27 @@ public class MainInterfaz extends javax.swing.JFrame {
         carta12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(carta12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 90, 120));
 
-        jTextField15.setEditable(false);
-        jTextField15.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField15.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        telf2.setEditable(false);
+        telf2.setBackground(new java.awt.Color(204, 204, 204));
+        telf2.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        telf2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        telf2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                telf2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 140, 60));
+        jPanel1.add(telf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, 210, 60));
 
-        jTextField14.setEditable(false);
-        jTextField14.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField14.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+        telf1.setEditable(false);
+        telf1.setBackground(new java.awt.Color(204, 204, 204));
+        telf1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        telf1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        telf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
+                telf1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 140, 60));
+        jPanel1.add(telf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 210, 60));
 
         score2.setBackground(new java.awt.Color(51, 51, 255));
         score2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -643,20 +703,19 @@ public class MainInterfaz extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         encendido=false;
-        ia.stop();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void adminaccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminaccionesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_adminaccionesActionPerformed
 
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
+    private void telf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telf1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
+    }//GEN-LAST:event_telf1ActionPerformed
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void telf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telf2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_telf2ActionPerformed
 
     private void score2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_score2ActionPerformed
         // TODO add your handling code here:
@@ -668,12 +727,20 @@ public class MainInterfaz extends javax.swing.JFrame {
 
     private void masActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masActionPerformed
         // TODO add your handling code here:
+        if (encendido) {
+            JOptionPane.showMessageDialog(null, "No se puede cambiar el tiempo en ejecución");
+            return;
+        }
         tiempo_global+=1;
         tiempo.setText(String.valueOf(tiempo_global));
     }//GEN-LAST:event_masActionPerformed
 
     private void menosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menosActionPerformed
         // TODO add your handling code here:
+        if (encendido) {
+            JOptionPane.showMessageDialog(null, "No se puede cambiar el tiempo en ejecución");
+            return;
+        }
         tiempo_global-=1;
         if (tiempo_global<=0) {
             JOptionPane.showMessageDialog(null, "El tiempo no puede ser negativo");
@@ -682,6 +749,22 @@ public class MainInterfaz extends javax.swing.JFrame {
         }
         tiempo.setText(String.valueOf(tiempo_global));
     }//GEN-LAST:event_menosActionPerformed
+
+    private void vendidoJohnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vendidoJohnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vendidoJohnActionPerformed
+
+    private void vendidoAleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vendidoAleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vendidoAleActionPerformed
+
+    private void colasvaciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colasvaciasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colasvaciasActionPerformed
+
+    private void contador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contador4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contador4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -719,6 +802,7 @@ public class MainInterfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JTextField adminacciones;
     public static javax.swing.JLabel carta11;
     public static javax.swing.JLabel carta12;
     public static javax.swing.JLabel carta21;
@@ -743,6 +827,8 @@ public class MainInterfaz extends javax.swing.JFrame {
     public static javax.swing.JTextPane cola3john;
     public static javax.swing.JTextPane colarefuerzoale;
     public static javax.swing.JTextPane colarefuerzojohn;
+    public static javax.swing.JTextField colasvacias;
+    public static javax.swing.JTextField contador4;
     public static javax.swing.JLabel fondo1;
     public static javax.swing.JLabel fondo2;
     public static javax.swing.JTextField ganador;
@@ -782,13 +868,16 @@ public class MainInterfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    public static javax.swing.JTextField jTextField13;
-    public static javax.swing.JTextField jTextField14;
-    public static javax.swing.JTextField jTextField15;
     private javax.swing.JButton mas;
     private javax.swing.JButton menos;
+    public static javax.swing.JTextField moveale;
+    public static javax.swing.JTextField movejohn;
     public static javax.swing.JTextField score1;
     public static javax.swing.JTextField score2;
+    public static javax.swing.JTextField telf1;
+    public static javax.swing.JTextField telf2;
     public static javax.swing.JTextField tiempo;
+    public static javax.swing.JTextField vendidoAle;
+    public static javax.swing.JTextField vendidoJohn;
     // End of variables declaration//GEN-END:variables
 }
