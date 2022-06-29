@@ -40,6 +40,7 @@ public class Administrador {
     }
     
     public static void AdministrarColas(Telefono telf_john, Telefono telf_ale){
+        MainInterfaz.adminacciones.setText("Actualizando colas...");
         if (telf_john.getCopas()<=1999) {
             MainInterfaz.cola_3_john.Encolar(telf_john);
         }
@@ -83,6 +84,7 @@ public class Administrador {
     
     
     public static void SalirDeRefuerzo(){
+        MainInterfaz.adminacciones.setText("Actualizando colas...");
         if (MainInterfaz.cola_refuerzo_john.esta_vacia() || MainInterfaz.cola_refuerzo_ale.esta_vacia() ) {
             return;
         }
@@ -118,6 +120,7 @@ public class Administrador {
     }
     
     public static void Admindesencola(Telefono telf_john, Telefono telf_ale){
+        MainInterfaz.adminacciones.setText("Actualizando colas...");
         if (telf_john.getCopas()<=1999) {
             MainInterfaz.cola_3_john.Desencolar();
         }
@@ -250,7 +253,7 @@ public class Administrador {
     }
     
     public static void MoverTelefonos(){
-        
+            MainInterfaz.adminacciones.setText("Moviendo Telefonos...");
      
             while (!MainInterfaz.cola_2_john.esta_vacia()) {                
                 if (MainInterfaz.cola_2_john.Leer_cabeza().contador_tel==8) {

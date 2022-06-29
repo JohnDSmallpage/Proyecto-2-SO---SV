@@ -31,7 +31,6 @@ public class IA extends Thread {
     
     public static void decision(Telefono telf_john, Telefono telf_ale)  {
         MainInterfaz.contador+=2;
-        MainInterfaz.contador4.setText(String.valueOf(MainInterfaz.contador));
         
         
         MainInterfaz.telf1.setText("ID: " + telf_john.getID()+"\n"+ "Copas: "+telf_john.getCopas()+"\n"+"Contador: " + telf_john.contador_tel);
@@ -67,6 +66,9 @@ public class IA extends Thread {
 
     public static void batalla(Telefono telf_john, Telefono telf_ale) throws InterruptedException{
         MainInterfaz.ganador.setText("");
+        MainInterfaz.telf1.setText("");
+        MainInterfaz.telf2.setText("");
+        
         int[] mazo_john = new int[4];
         int[] mazo_ale = new int[4];
         for (int i = 0; i < 4; i++) {
@@ -233,10 +235,6 @@ public class IA extends Thread {
         MainInterfaz.score1.setText("0");
         MainInterfaz.score2.setText("0");
         MainInterfaz.colasvacias.setText("");
-        
-        
-        
-
     }
 
     public static void empate(Telefono telf_john, Telefono telf_ale){
