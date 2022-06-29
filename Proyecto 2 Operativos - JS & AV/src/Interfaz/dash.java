@@ -55,10 +55,10 @@ public class dash extends javax.swing.JFrame {
             texto = linea[i].split(",");
             String id = Integer.toString(i+1);
             int dato = Integer.parseInt(texto[0]);
-            datos.setValue(dato, "Telf John",id);
+            datos.setValue(dato, "Planta 1: Teléfono Xperia Pro-I:",id);
             
             int ganancia = Integer.parseInt(texto[1]);
-            datos.setValue(ganancia, "Telf Ale",id);
+            datos.setValue(ganancia, "Planta 2: Teléfono Xperia 1 IV",id);
         }
         JFreeChart grafico_barras = ChartFactory.createBarChart3D(
         "",
