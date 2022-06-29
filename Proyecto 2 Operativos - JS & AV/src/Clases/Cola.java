@@ -106,32 +106,6 @@ public class Cola {
                     } 
                     else {
                         cola.Encolar(aux.getInfo());
-//                else{
-//                    if (aux==pfirst) {
-//                        pfirst=aux.getSiguiente();
-//                        cola.Encolar(aux.getInfo());
-//                        size--;
-//                    }
-//                    else if(aux==plast){
-//                        Nodo aux_2=pfirst;
-//                        while (aux_2.getSiguiente()!=plast) {                            
-//                            aux_2=aux_2.getSiguiente();
-//                        }
-//                        cola.Encolar(plast.getInfo());
-//                        plast=aux_2;
-//                        aux_2.setSiguiente(null);
-//                        size--;
-//                        
-//                    }
-//                    else{
-//                        Nodo aux_2= pfirst;
-//                        while (aux_2.getSiguiente()!=aux && aux_2.getSiguiente()!=null) {                            
-//                            aux_2=aux_2.getSiguiente();
-//                        }
-//                        aux_2.setSiguiente(aux.getSiguiente());
-//                        cola.Encolar(aux.getInfo());
-//                        size--;
-//                    }
                     }
                 }
 
@@ -164,7 +138,6 @@ public class Cola {
                     aux = aux.getSiguiente();
                 }
             }
-            System.out.print(palabra);
         }
     }
 
