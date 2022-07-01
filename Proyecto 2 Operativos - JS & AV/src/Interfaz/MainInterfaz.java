@@ -727,6 +727,15 @@ public class MainInterfaz extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //Borrar colas antes
+        
+        if (encendido == true){
+            JOptionPane.showMessageDialog(null, "El programa ya está encendido");
+            return;
+        }
+        
+        
+        
+        
         encendido=true;
         this.ia= new IA();
         ia.start();
