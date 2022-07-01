@@ -193,14 +193,16 @@ public class Administrador {
         
         if (telf_john==null || telf_ale==null) {
             Agregartelf();
-            if (Math.random()<0.4) {
-                SalirDeRefuerzo();
+            if (Math.random()<=0.4) {
+            SalirDeRefuerzo();
             }
-            System.out.println("AGREGANDO TELF");
             MainInterfaz.inteligencia.setText("Agregando tlf...");
             MainInterfaz.colasvacias.setText("Colas vacías\n Se crea tlf y pasa a IA");
+            
             return;
         }
+        
+        
         ImprimirPantalla();
         
         IA.decision(telf_john, telf_ale);

@@ -474,13 +474,15 @@ public class MainInterfaz extends javax.swing.JFrame {
         jLabel15.setText("COLA 3");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 80, 30));
 
+        movejohn.setEditable(false);
         movejohn.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         movejohn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(movejohn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 600, 130, 30));
+        jPanel1.add(movejohn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 600, 130, 30));
 
+        moveale.setEditable(false);
         moveale.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         moveale.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(moveale, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 600, 130, 30));
+        jPanel1.add(moveale, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 600, 130, 30));
 
         adminacciones.setEditable(false);
         adminacciones.setBackground(new java.awt.Color(204, 204, 204));
@@ -732,7 +734,7 @@ public class MainInterfaz extends javax.swing.JFrame {
         ID_global=0;
         vendidos_john=0;
         vendidos_ale=0;
-        primera=true;
+        primera=false;
         cola1john.setText("");
         cola2john.setText("");
         cola3john.setText("");

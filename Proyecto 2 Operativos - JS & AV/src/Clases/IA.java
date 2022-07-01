@@ -69,6 +69,9 @@ public class IA extends Thread {
         MainInterfaz.telf1.setText("");
         MainInterfaz.telf2.setText("");
         
+        MainInterfaz.telf1.setText("ID: " + telf_john.getID()+"\n"+ "Copas: "+telf_john.getCopas()+"\n"+"Contador: " + telf_john.contador_tel);
+        MainInterfaz.telf2.setText("ID: " + telf_ale.getID()+"\n"+ "Copas: " + telf_ale.getCopas()+"\n"+ "Contador: " + telf_ale.contador_tel);
+        
         int[] mazo_john = new int[4];
         int[] mazo_ale = new int[4];
         for (int i = 0; i < 4; i++) {
@@ -79,8 +82,6 @@ public class IA extends Thread {
 
         int score_john = 0;
         int score_ale = 0;
-        
-        
 
         for (int j = 0; j < 4; j++) {
             MainInterfaz.inteligencia.setText("COMPITIENDO");
